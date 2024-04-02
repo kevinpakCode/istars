@@ -1,0 +1,20 @@
+@mixin flex($flex:flex, $justify:flex-start, $alignItems:start){
+    display: $flex;
+    justify-content: $justify;
+    align-items: $alignItems;
+}
+
+@mixin btnLink($color:$white, $bg:$orange){
+    color:$color;
+    background-color: $orange;
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: "barlow-semibold", sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    transition: .3s;
+    &:hover{
+        background-color: #e99010;
+    }
+}

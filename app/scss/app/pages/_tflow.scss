@@ -1,0 +1,87 @@
+.tflow{
+    &__content{
+        padding-top: 60px;
+        padding-bottom: 60px;
+        h1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:25px;
+            margin-bottom:70px;
+            img{
+                width: 69px;
+            }
+        }
+    }
+    &__form{
+        display: flex;
+        justify-content: flex-start;
+        gap: 60px;
+        &__logo{
+            max-width: 305px;
+            margin:25px auto 48px auto;
+        }
+        &__item{
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap:15px;
+            label{
+                width: 160px;
+                white-space: nowrap;
+            }
+            input, select{
+                width: 100%;
+            }
+            button{
+                padding:10px;
+                text-align: center;
+                background-color: #006FB5;
+                color:$white;
+                border: none;
+                transition: .3s;
+                width: 100%;
+                cursor: pointer;
+                border-radius:5px;
+                &:hover{
+                    background-color: lighten($color: #006FB5, $amount: 10);
+                }
+            }
+        }
+        &__left{
+            width:461px;
+        }
+        &__right{
+            width: calc(100% - 461px);
+            *{
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+            }
+        }
+
+        @media (max-width:991px){
+            flex-wrap: wrap;
+            &__left, &__right{
+                width: 100%;
+            }
+        }
+    }
+    &__airportInfo{
+        ul{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            li{
+                text-align: center;
+                color:$blueLight;
+                text-transform: uppercase;
+                font-family: "Barlow-Medium", sans-serif;
+                padding:5px;
+                font-size: 24px;
+                & + li{
+                    border-left:1px solid #C1C1C1;
+                }
+            }
+        }
+
+    }
+}
