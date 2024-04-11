@@ -37,6 +37,7 @@
   src: local("Roboto-Bold"), url(./../../fonts/roboto/Roboto-BOld.ttf);
 }
 
+
 *{
   padding:0;
   margin:0;
@@ -79,7 +80,9 @@ input, select{
   border:1px solid #DDDDDD;
   padding-left:15px;
 }
-
+input[type="date" i]::-webkit-calendar-picker-indicator {
+  background-position-x: -3px;
+}
 button {
   border: none;
   cursor: pointer;
@@ -101,7 +104,7 @@ select{
 }
 
 main.main{
-  min-height: calc(100vh - (121px + 521px));
+  min-height: calc(100vh - (121px + 501px));
   &-second{
     min-height: calc(100vh - (64px + 521px));
   }

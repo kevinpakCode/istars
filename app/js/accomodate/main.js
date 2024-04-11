@@ -103,3 +103,100 @@ $(document).ready(function() {
 
   $('select').select2();
 });
+
+
+
+particlesJS('particles-js', {
+  particles: {
+      number: {
+          value: 30,  
+          density: {
+              enable: true,
+              value_area: 800  
+          }
+      },
+      shape: {
+          type: 'image',
+          image: {
+              src: 'images/icons8-airplane-take-off-100blue.png',
+              width: 200,  
+              height: 200  
+          }
+      },
+      opacity: {
+          value: 0.5,  
+          random: true,
+          anim: {
+              enable: true,
+              speed: 2,
+              opacity_min: 0.1,
+              sync: true
+          }
+      },
+      size: {
+          value: 30,  
+          random: true,
+          anim: {
+              enable: false,
+              speed: 30,
+              size_min: 0.1,
+              sync: false
+          }
+      },
+      move: {
+          enable: true,
+          speed: 1,  
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200
+          }
+      }
+  },
+  interactivity: {
+      detect_on: 'canvas',
+      events: {
+          onhover: {
+              enable: true,
+              mode: 'repulse'
+          },
+          onclick: {
+              enable: true,
+              mode: 'push'
+          }
+      },
+      modes: {
+          repulse: {
+              distance: 200,
+              duration: 0.4
+          },
+          push: {
+              particles_nb: 4
+          }
+      }
+  },
+  retina_detect: true
+});
+
+
+const hambergerBtn = document.body.querySelector('#js-btn-menu')
+if(hambergerBtn) {
+  const menu = document.body.querySelector('#header-menu')
+  console.log('menu', menu)
+  if(menu) {
+    hambergerBtn.addEventListener('click', e => {
+      e.preventDefault()
+      if(menu.classList.contains('active')) {
+        menu.classList.remove('active')
+      } else {
+        menu.classList.add('active')
+      }
+    })
+  }
+  
+}

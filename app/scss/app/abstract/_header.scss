@@ -202,6 +202,8 @@
             align-items: center;
             gap: 50px;
             a{
+                font-size: 1rem;
+                line-height: 1rem;
                 color:$white;
                 transition: .3s;
                 font-family: "Roboto-Bold",sans-serif;
@@ -215,7 +217,19 @@
                 justify-content: center;
             }
         }
-        .header__top__profil{
+        .header__top__profil {
+            &::before {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                width: 1px;
+                height: calc(100% + 24px);
+                top: -12px;
+                left: -20px;
+                background-color:#10385154;
+                
+            }
+
             & > a{
                 display: flex;
                 align-items: center;
@@ -228,8 +242,8 @@
                 span{
                     transition: .3s;
                     &.name{
-                        font-family: "Barlow-Bold", sans-serif;
-                        font-size: 17px;
+                        font-family: "barlow-semibold", sans-serif;
+                        font-size: 1rem;
                         color:$white;
                         display: inline-block;
                         padding:0 5px;
