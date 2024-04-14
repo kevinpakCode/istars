@@ -1,5 +1,6 @@
 @import './variables/colors';
 @import './mixins/mixins';
+@import './abstract/form';
 @import './abstract/default';
 @import './abstract/header';
 @import './abstract/footer';
@@ -10,3 +11,4 @@
 @import './pages/portal';
 @import './pages/portalsam';
 @import './pages/tflow';
+@import './pages/ui';
