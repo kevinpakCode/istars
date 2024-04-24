@@ -251,8 +251,8 @@ canvas {
   position:fixed;
   left: -300px;
   z-index: 50;
-  min-height: calc(100vh - 64px);
-  top:64px;
+  min-height: calc(100vh - 62px);
+  top:62px;
   border-top:1px solid #A3C8DF;
   transition:.5s;
   &.active{
@@ -262,7 +262,7 @@ canvas {
 
   }
   &__item{
-    margin-bottom:15px;
+    margin-bottom:25px;
     padding-left:25px;
     &:before{
       content:"";
@@ -278,7 +278,8 @@ canvas {
     a{
       color: #A3C8DF;
       font-family: "Barlow-Medium", sans-serif;
-      font-size: 15px;
+      font-size: 0.875rem;
+      list-style: 0.75rem;
       transition: .3s;
     }
     &:hover{

@@ -120,8 +120,8 @@
       }
     }
     &__btnClose {
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
         display: none;
         @media (max-width:767px){
             display: inline-block;
@@ -130,7 +130,7 @@
             display: block;
             position: absolute;
             height: 3px;
-            width: 35px;
+            width: 30px;
             background-color: $white;
             left: 50%;
             top: 50%;
@@ -140,7 +140,7 @@
                 content: "";
                 position: absolute;
                 height: 3px;
-                width: 35px;
+                width: 30px;
                 transition: all 0.3s ease-in;
                 background-color: $white;
                 left: 50%;
@@ -307,6 +307,16 @@
                         visibility: hidden;
                     }
                 }
+            }
+        }
+    }
+
+    &-second-2 {
+        .header__top {
+            gap:5px;
+
+            &__logo {
+                margin-right: auto;
             }
         }
     }

@@ -183,7 +183,7 @@ particlesJS('particles-js', {
   retina_detect: true
 });
 
-
+//==>
 const hambergerBtn = document.body.querySelector('#js-btn-menu')
 if(hambergerBtn) {
   const menu = document.body.querySelector('#header-menu')
@@ -199,4 +199,26 @@ if(hambergerBtn) {
     })
   }
   
+}
+
+
+//==> control sidbare
+const connectedUserHambergerBtn = document.body.querySelector('[data-action="control-sidebare"]')
+console.log('connectedUserHambergerBtn', connectedUserHambergerBtn)
+if(connectedUserHambergerBtn) {
+  const sidebar = document.body.querySelector('#sidebar')
+  console.log('sidebar', sidebar)
+  if(sidebar) {
+    connectedUserHambergerBtn.addEventListener('click', e => {
+      e.preventDefault()
+      if(sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active')
+        connectedUserHambergerBtn.classList.remove('active')
+      } else {
+        sidebar.classList.add('active')
+        connectedUserHambergerBtn.classList.add('active')
+      }
+    })
+    
+  }
 }
