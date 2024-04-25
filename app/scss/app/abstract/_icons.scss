@@ -1,0 +1,19 @@
+
+.icon {
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  background-color: #A7AEBC;
+  -webkit-mask-size: 20px 20px;
+  -webkit-mask-repeat: no-repeat ;
+  -webkit-mask-position: center;
+
+  /*
+  * icon-
+  */
+  &.icon-arrown-bottom {
+    -webkit-mask-image: url('./../../../images/icon-arrown-bottom.svg');
+  }
+
+}
+
