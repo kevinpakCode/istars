@@ -8,6 +8,13 @@
   -webkit-mask-repeat: no-repeat ;
   -webkit-mask-position: center;
 
+
+
+   /*
+  * DECLARATION
+  *
+  -----------------------------------------*/
+
   /*
   * icon-
   */
@@ -15,5 +22,104 @@
     -webkit-mask-image: url('./../../../images/icon-arrown-bottom.svg');
   }
 
+  /*
+  * icon-certification
+  */
+  &.icon-certification {
+    -webkit-mask-image: url('./../../../images/svg/icon-certification.svg');
+  }
+
+  /*
+  * icon-treaty
+  */
+  &.icon-treaty {
+    -webkit-mask-image: url('./../../../images/svg/icon-treaty.svg');
+  }
+
+  /*
+  * icon-safety-management
+  */
+  &.icon-safety-management {
+    -webkit-mask-image: url('./../../../images/svg/icon-safety-management.svg');
+  }
+
+   /*
+  * icon-air-navigation
+  */
+  &.icon-air-navigation {
+    -webkit-mask-image: url('./../../../images/svg/icon-air-navigation.svg');
+  }
+
+   /*
+  * icon-safety
+  */
+  &.icon-safety {
+    -webkit-mask-image: url('./../../../images/svg/icon-safety.svg');
+  }
+   /*
+  * icon-facilitation
+  */
+  &.icon-facilitation {
+    -webkit-mask-image: url('./../../../images/svg/icon-facilitation.svg');
+  }
+
+
+
+
+
+
+
+
+   /*
+  * SIZE
+  *
+  -----------------------------------------*/
+
+  &.icon--medium {
+    min-width: 80px;
+    min-height: 80px;
+    -webkit-mask-size: 80px 80px;
+  }
+
+  &.icon--big {
+    min-width: 200px;
+    min-height: 200px;
+    -webkit-mask-size: 200px 200px;
+  }
+
+  &.icon--extra {
+    min-width: 300px;
+    min-height: 300px;
+    -webkit-mask-size: 300px 300px;
+  }
+
+
+  /*
+  * COLOR
+  *
+  -----------------------------------------*/
+  &.icon-color-red {
+    background-color: #ff0000;
+  }
+
+  &.icon-color-black {
+    background-color: #000;
+  }
+
+  &.icon-color-white {
+    background-color: #ffffff;
+  }
+
+  &.icon-color-blue {
+    background-color: #0062ff;
+  }
+
+  &.icon-color-default-blue {
+    background-color: #0056a4;
+  }
+
+  &.icon-color-yellow {
+    background-color: #e1ff00;
+  }
 }
 
