@@ -64,6 +64,27 @@
   }
 
 
+  /*
+  * icon-user
+  */
+  &.icon-user {
+    -webkit-mask-image: url('./../../../images/svg/icon-user.svg');
+  }
+
+  /*
+  * icon-dashboard
+  */
+  &.icon-dashboard {
+    -webkit-mask-image: url('./../../../images/svg/icon-dashboard.svg');
+  }
+
+  /*
+  * icon-logout
+  */
+  &.icon-logout {
+    -webkit-mask-image: url('./../../../images/svg/icon-logout.svg');
+  }
+
 
 
 
@@ -94,6 +115,9 @@
   }
 
 
+  
+
+
   /*
   * COLOR
   *
@@ -122,4 +146,6 @@
     background-color: #e1ff00;
   }
 }
+
+
 

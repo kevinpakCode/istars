@@ -223,6 +223,26 @@ if(connectedUserHambergerBtn) {
 }
 
 
+//====>> Control user-menu
+const userMenuBtn = document.querySelector('[data-action="control-user-menu"]')
+if(userMenuBtn) {
+  const userMenuBox = document.querySelector('[data-id="user-menu"]')
+  if(userMenuBox) {
+    userMenuBtn.addEventListener('click', e => {
+      e.preventDefault()
+      userMenuBox.classList.toggle('open')
+    })
+    document.addEventListener('click', e => {
+      const targetElem = e.target
+      console.log('targetElem', targetElem)
+      if(!userMenuBox.classList.contains('open')) return
+      if((targetElem.dataset?.action==='control-user-menu')||targetElem.closest('[data-action="control-user-menu"]')||targetElem.classList.contains('user-menu')||targetElem.closest('.user-menu')) return
+      userMenuBox.classList.remove('open')
+    })
+  }
+  
+}
+
 // /*
 // -------------------------------
 // * Accordion
