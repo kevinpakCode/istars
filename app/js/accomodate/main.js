@@ -106,83 +106,117 @@ $(document).ready(function() {
 
 
 
-particlesJS('particles-js', {
-  particles: {
-      number: {
-          value: 30,  
-          density: {
-              enable: true,
-              value_area: 800  
-          }
-      },
-      shape: {
-          type: 'image',
-          image: {
-              src: 'images/icons8-airplane-take-off-100blue.png',
-              width: 200,  
-              height: 200  
-          }
-      },
-      opacity: {
-          value: 0.5,  
-          random: true,
-          anim: {
-              enable: true,
-              speed: 2,
-              opacity_min: 0.1,
-              sync: true
-          }
-      },
-      size: {
-          value: 30,  
-          random: true,
-          anim: {
-              enable: false,
-              speed: 30,
-              size_min: 0.1,
-              sync: false
-          }
-      },
-      move: {
-          enable: true,
-          speed: 1,  
-          direction: 'none',
-          random: false,
-          straight: false,
-          out_mode: 'out',
-          bounce: false,
-          attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200
-          }
-      }
-  },
-  interactivity: {
-      detect_on: 'canvas',
-      events: {
-          onhover: {
-              enable: true,
-              mode: 'repulse'
-          },
-          onclick: {
-              enable: true,
-              mode: 'push'
-          }
-      },
-      modes: {
-          repulse: {
-              distance: 200,
-              duration: 0.4
-          },
-          push: {
-              particles_nb: 4
-          }
-      }
-  },
-  retina_detect: true
-});
 
+
+const particlesId = 'particles-js'
+
+const runParticlesJS = (selector) => {
+
+  particlesJS(selector, {
+    particles: {
+        number: {
+            value: 30,  
+            density: {
+                enable: true,
+                value_area: 800  
+            }
+        },
+        shape: {
+            type: 'image',
+            image: {
+                src: 'images/icons8-airplane-take-off-100blue.png',
+                width: 200,  
+                height: 200  
+            }
+        },
+        opacity: {
+            value: 0.5,  
+            random: true,
+            anim: {
+                enable: true,
+                speed: 2,
+                opacity_min: 0.1,
+                sync: true
+            }
+        },
+        size: {
+            value: 30,  
+            random: true,
+            anim: {
+                enable: false,
+                speed: 30,
+                size_min: 0.1,
+                sync: false
+            }
+        },
+        move: {
+            enable: true,
+            speed: 1,  
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false,
+            attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200
+            }
+        }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: {
+            onhover: {
+                enable: true,
+                mode: 'repulse'
+            },
+            onclick: {
+                enable: true,
+                mode: 'push'
+            },
+           
+        },
+        
+        modes: {
+            repulse: {
+                distance: 200,
+                duration: 0.4
+            },
+            push: {
+                particles_nb: 4
+            }
+        },
+         
+    },
+    retina_detect: true
+  });
+}
+
+runParticlesJS(particlesId)
+let counterResize = 0
+const resizeObserver = new ResizeObserver((entries) => {
+  counterResize++
+  //console.log('entries', entries[0])
+  if(counterResize>1) {
+    if(entries[0].target.id===particlesId) {
+      setTimeout(() => {
+        const currentElement = document.getElementById(particlesId)
+        if(currentElement) {
+          const currentElementCanvas = currentElement.querySelector('canvas')
+          currentElement.removeChild(currentElementCanvas)
+          runParticlesJS(particlesId)
+          //console.log('newElem', newElem)
+        }
+      }, 200)
+     
+     
+    }
+  }
+
+})
+
+resizeObserver.observe(document.getElementById('particles-js'))
 
 
 //==>
