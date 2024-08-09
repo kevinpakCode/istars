@@ -192,31 +192,35 @@ const runParticlesJS = (selector) => {
     retina_detect: true
   });
 }
-
-runParticlesJS(particlesId)
-let counterResize = 0
-const resizeObserver = new ResizeObserver((entries) => {
-  counterResize++
-  //console.log('entries', entries[0])
-  if(counterResize>1) {
-    if(entries[0].target.id===particlesId) {
-      setTimeout(() => {
-        const currentElement = document.getElementById(particlesId)
-        if(currentElement) {
-          const currentElementCanvas = currentElement.querySelector('canvas')
-          currentElement.removeChild(currentElementCanvas)
-          runParticlesJS(particlesId)
-          //console.log('newElem', newElem)
-        }
-      }, 200)
-     
-     
+const targetElem = document.getElementById(particlesId)
+if(targetElem) {
+  runParticlesJS(particlesId)
+  let counterResize = 0
+  const resizeObserver = new ResizeObserver((entries) => {
+    counterResize++
+    //console.log('entries', entries[0])
+    if(counterResize>1) {
+      if(entries[0].target.id===particlesId) {
+        setTimeout(() => {
+          const currentElement = document.getElementById(particlesId)
+          if(currentElement) {
+            const currentElementCanvas = currentElement.querySelector('canvas')
+            if(currentElementCanvas) {
+              currentElement.removeChild(currentElementCanvas)
+              runParticlesJS(particlesId)
+            }
+          
+            //console.log('newElem', newElem)
+          }
+        }, 200)
+      
+      }
     }
-  }
 
-})
+  })
+  resizeObserver?.observe(document.getElementById('particles-js'))
+}
 
-resizeObserver.observe(document.getElementById('particles-js'))
 
 
 //==>
