@@ -242,22 +242,94 @@ if(hambergerBtn) {
 
 
 //==> control sidbare
+let defaultTop = 143//62//342
+const wWidth = window.innerWidth
+const wHeight = window.innerHeight
 const connectedUserHambergerBtn = document.body.querySelector('[data-action="control-sidebare"]')
 if(connectedUserHambergerBtn) {
   const sidebar = document.body.querySelector('#sidebar')
   if(sidebar) {
     connectedUserHambergerBtn.addEventListener('click', e => {
       e.preventDefault()
+
+      
+      const defaultContainer = document.body.querySelector('.container')
+      const sidbareWidth = 280
+      
+      const defaultContainerInfos = defaultContainer.getBoundingClientRect()
+      const defaultContainerWidth = defaultContainerInfos.width
+
+      const leftFreeMargin = (wWidth - defaultContainerWidth)/2
+      
       if(sidebar.classList.contains('active')) {
         sidebar.classList.remove('active')
         connectedUserHambergerBtn.classList.remove('active')
+        if(leftFreeMargin>sidbareWidth) sidbare.style.left = '-300px'
       } else {
         sidebar.classList.add('active')
         connectedUserHambergerBtn.classList.add('active')
+        sidbare.style.maxHeight = `${wHeight-defaultTop}px`
+
+        
+
+        
+        
+        
+        console.log('leftFreeMargin', leftFreeMargin)
+
+        if(leftFreeMargin>sidbareWidth) {
+          const newSidebarLet = (leftFreeMargin-sidbareWidth)/2
+          console.log('newSidebarLet', newSidebarLet)
+          sidbare.style.left = `${newSidebarLet}px`
+        }
+
       }
     })
     
   }
+}
+
+const sidbare = document.getElementById('sidebar')
+
+if(sidbare) {
+  let lastScrollTop = 0
+  
+  const sidbareWidth = 280
+  const defaultContainer = document.body.querySelector('.container')
+  const defaultContainerInfos = defaultContainer.getBoundingClientRect()
+  const defaultContainerWidth = defaultContainerInfos.width
+  sidbare.style.top = `${defaultTop}px`
+  sidbare.style.minHeight = `30px`
+  const leftFreeMargin = (wWidth - defaultContainerWidth)/2
+  
+  
+
+  window.addEventListener('scroll', () => {
+    if(sidbare.classList.contains('active')) {
+      
+
+      let currentScroll = window.pageYOffset??document.documentElement.scrollTop??0
+      
+      let temporaryTop = defaultTop
+      
+
+      
+      console.log('currentScroll', currentScroll, wWidth, wHeight)
+      if(currentScroll > lastScrollTop) {
+        temporaryTop = defaultTop-10
+      } else {
+        temporaryTop = defaultTop+10
+      }
+      sidbare.style.top = `${temporaryTop}px`
+      
+
+      setTimeout(() => {
+        sidbare.style.top = `${defaultTop}px`
+        lastScrollTop = currentScroll
+      }, 300)
+      
+    }
+  })
 }
 
 
@@ -280,6 +352,9 @@ if(userMenuBtn) {
   }
   
 }
+
+
+
 
 // /*
 // -------------------------------

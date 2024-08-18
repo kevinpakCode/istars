@@ -252,9 +252,24 @@ canvas {
   left: -300px;
   z-index: 50;
   min-height: calc(100vh - 62px);
+  max-height: 300px;
   top:62px;
   border-top:1px solid #A3C8DF;
   transition:.5s;
+
+  display: flex !important;
+  // overflow-y: hidden;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+      width: 5px;
+      height: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+      background-color: #ededed;
+      border-radius: 10px;
+  }
+
   &.active{
     left:0;
   }
